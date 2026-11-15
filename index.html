@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude AI Animation Blueprint — What's Know Official</title>
+  <meta name="description" content="Create viral 100K-view Science & Fact Animations in just 10 minutes using Claude AI. Get the complete PDF guide + 10 copy-paste prompts for ₹69." />
+  
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            navy: {
+              950: '#050B14',
+              900: '#0A1324',
+              800: '#111E36',
+              700: '#1A2D4F',
+            },
+            brandYellow: '#FACC15',
+            brandCyan: '#06B6D4',
+          },
+          animation: {
+            'pulse-glow': 'pulseGlow 2.2s infinite',
+            'float-slow': 'floatSlow 4s ease-in-out infinite',
+            'orbit': 'orbitSpin 9s linear infinite',
+            'orbit-reverse': 'orbitSpinReverse 14s linear infinite',
+          },
+          keyframes: {
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 0 0 rgba(250, 204, 21, 0.55)' },
+              '50%': { boxShadow: '0 0 28px 6px rgba(250, 204, 21, 0.35)' },
+            },
+            floatSlow: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' },
+            },
+            orbitSpin: {
+              '0%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(360deg)' },
+            },
+            orbitSpinReverse: {
+              '0%': { transform: 'rotate(360deg)' },
+              '100%': { transform: 'rotate(0deg)' },
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #050B14;
+      color: #F8FAFC;
+      overflow-x: hidden;
+    }
+    .grid-bg {
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.14), transparent 55%),
+        radial-gradient(circle at 85% 20%, rgba(250, 204, 21, 0.08), transparent 45%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    }
+    .glass-card {
+      background: rgba(17, 30, 54, 0.65);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(56, 189, 248, 0.16);
+    }
+    .book-3d {
+      box-shadow: -12px 16px 35px rgba(0, 0, 0, 0.75), 0 0 30px rgba(6, 182, 212, 0.2);
+      transform: perspective(900px) rotateY(-8deg) rotateX(2deg);
+      transition: transform 0.4s ease;
+    }
+    .book-3d:hover {
+      transform: perspective(900px) rotateY(-2deg) rotateX(0deg);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-brandYellow selection:text-navy-950 pb-24">
+
+  <!-- TOP SCARCITY / URGENCY BAR -->
+  <div class="sticky top-0 z-50 bg-gradient-to-r from-amber-500 via-brandYellow to-amber-400 text-navy-950 px-3 py-2 text-center shadow-lg border-b border-yellow-300">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-2 text-xs sm:text-sm font-extrabold tracking-tight">
+      <span class="inline-flex items-center gap-1 bg-navy-950 text-brandYellow px-2.5 py-0.5 rounded-full text-[11px] uppercase">
+        ⚡ Limited Launch Offer
+      </span>
+      <span>Price jumps from <span class="underline">₹69</span> to <span class="line-through opacity-75">₹299</span> when timer ends:</span>
+      <span id="countdown-timer" class="font-mono bg-navy-950 text-white px-2.5 py-0.5 rounded-md font-bold text-xs sm:text-sm tracking-wider">
+        14:59
+      </span>
+    </div>
+  </div>
+
+  <!-- NAVBAR / BRAND HEADER -->
+  <header class="border-b border-slate-800/80 bg-navy-950/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+      <!-- Brand Logo SVG -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-navy-900 border-2 border-brandCyan flex items-center justify-center shadow-[0_0_15px_rgba(6,182,212,0.4)] group-hover:scale-105 transition">
+          <svg viewBox="0 0 64 64" class="w-7 h-7" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="What's Know Official Logo">
+            <path d="M32 10C22.6112 10 15 17.6112 15 27C15 32.8936 17.9977 38.0868 22.5532 41.137C23.5137 41.7801 24.1667 42.8012 24.3315 43.9457L24.627 46H39.373L39.6685 43.9457C39.8333 42.8012 40.4863 41.7801 41.4468 41.137C46.0023 38.0868 49 32.8936 49 27C49 17.6112 41.3888 10 32 10Z" fill="#FACC15" stroke="#06B6D4" stroke-width="2.5"/>
+            <path d="M29.2 23.5C29.2 21.8 30.5 20.6 32.2 20.6C33.9 20.6 35.1 21.7 35.1 23.2C35.1 24.5 34.3 25.2 33.1 25.9C32.2 26.4 31.8 27 31.8 28.1V28.8" stroke="#050B14" stroke-width="2.8" stroke-linecap="round"/>
+            <circle cx="31.8" cy="32.5" r="1.7" fill="#050B14"/>
+            <rect x="25.5" y="48.5" width="13" height="2.8" rx="1.4" fill="#06B6D4"/>
+            <rect x="27.5" y="53" width="9" height="2.8" rx="1.4" fill="#06B6D4"/>
+          </svg>
+        </div>
+        <div>
+          <span class="block text-sm sm:text-base font-black tracking-wide text-white leading-none">WHAT'S KNOW</span>
+          <span class="block text-[10px] sm:text-xs font-bold tracking-[0.22em] text-brandCyan mt-0.5">OFFICIAL</span>
+        </div>
+      </a>
+
+      <!-- Top Header CTA -->
+      <a href="https://superprofile.bio/vp/6af9647553aa440007f208b6" class="inline-flex items-center gap-1.5 bg-brandCyan/15 hover:bg-brandCyan/25 text-brandCyan border border-brandCyan/40 font-bold text-xs sm:text-sm px-3.5 py-2 rounded-xl transition">
+        <span>Get Guide — ₹69</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="grid-bg pt-8 pb-14 sm:pt-14 sm:pb-20 px-4 sm:px-6 border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+      
+      <!-- Left Copy Column -->
+      <div class="lg:col-span-7 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800 border border-brandCyan/30 text-brandCyan text-xs sm:text-sm font-bold mb-5">
+          <span>🔥 FOR FACELESS REELS &amp; SHORTS CREATORS</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-[52px] font-black tracking-tight text-white leading-[1.14] mb-5">
+          Create Viral <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandYellow via-amber-300 to-brandCyan">100K-View Science &amp; Fact Animations</span> in Just 10 Minutes — Using Only Claude AI!
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed mb-7 max-w-2xl mx-auto lg:mx-0">
+          No expensive video editors. No complex 3D software. No showing your face. Just <strong class="text-white">copy, paste, and generate</strong> smooth moving animations directly on your phone or laptop.
+        </p>
+
+        <!-- Primary CTA Box -->
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-4">
+          <a href="https://superprofile.bio/vp/6af9647553aa440007f208b6" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brandYellow to-amber-400 hover:from-amber-300 hover:to-brandYellow text-navy-950 font-black text-base sm:text-lg px-7 py-4 rounded-2xl shadow-xl animate-pulse-glow transition transform hover:-translate-y-0.5">
+            <span>Download Blueprint + 10 Prompts Now — ₹69</span>
+            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          </a>
+        </div>
+
+        <!-- Price & Trust Micro-Copy -->
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 text-xs sm:text-sm text-slate-300 font-medium">
+          <span class="inline-flex items-center gap-1.5">
+            <span class="text-slate-400 line-through">₹299</span>
+            <span class="text-brandYellow font-extrabold text-base">₹69 Only</span>
+            <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[11px] font-bold px-2 py-0.5 rounded-full">77% OFF</span>
+          </span>
+          <span class="hidden sm:inline text-slate-600">|</span>
+          <span>⚡ Instant PDF Download</span>
+          <span class="hidden sm:inline text-slate-600">•</span>
+          <span>📱 Works on Mobile &amp; PC</span>
+          <span class="hidden sm:inline text-slate-600">•</span>
+          <span>🔒 Safe Checkout via SuperProfile</span>
+        </div>
+      </div>
+
+      <!-- Right 3D Product Mockup + Live Motion Simulation -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="relative w-full max-w-[340px] sm:max-w-[370px] animate-float-slow">
+          <!-- Glow Backdrop -->
+          <div class="absolute -inset-3 bg-gradient-to-tr from-brandCyan/30 via-brandYellow/20 to-purple-500/20 rounded-3xl blur-2xl"></div>
+          
+          <!-- 3D Book / Guide Card -->
+          <div class="relative book-3d bg-gradient-to-b from-navy-800 to-navy-950 border-2 border-brandCyan/50 rounded-2xl p-5 sm:p-6">
+            <!-- Top Badge -->
+            <div class="flex items-center justify-between border-b border-slate-700/80 pb-3 mb-4">
+              <span class="text-[11px] font-extrabold tracking-widest uppercase text-brandCyan">PDF E-BOOK + PROMPTS</span>
+              <span class="bg-brandYellow text-navy-950 text-[11px] font-black px-2.5 py-0.5 rounded-full">INSTANT ACCESS</span>
+            </div>
+
+            <!-- Live Animated Space/Science Preview Window inside Mockup -->
+            <div class="relative h-44 rounded-xl bg-[#040812] border border-slate-700/90 overflow-hidden mb-4 flex items-center justify-center">
+              <!-- Stars -->
+              <div class="absolute inset-0 opacity-70" style="background-image: radial-gradient(#ffffff 1px, transparent 1px), radial-gradient(#38bdf8 1px, transparent 1px); background-size: 28px 28px, 42px 42px; background-position: 0 0, 14px 14px;"></div>
+              
+              <!-- Animated Orbit Rings & Planet -->
+              <div class="relative flex items-center justify-center">
+                <div class="w-32 h-32 rounded-full border border-dashed border-brandCyan/50 animate-orbit flex items-center justify-start">
+                  <div class="w-3 h-3 rounded-full bg-brandYellow shadow-[0_0_10px_#FACC15] -ml-1.5"></div>
+                </div>
+                <div class="absolute w-22 h-22 rounded-full border border-amber-400/40 animate-orbit-reverse"></div>
+                <!-- Central Planet -->
+                <div class="absolute w-14 h-14 rounded-full bg-gradient-to-br from-brandCyan via-blue-600 to-indigo-900 shadow-[0_0_25px_rgba(6,182,212,0.65)] flex items-center justify-center">
+                  <div class="w-10 h-5 rounded-full bg-emerald-400/30 blur-[1px] -rotate-12"></div>
+                </div>
+              </div>
+
+              <!-- Live Simulation Label -->
+              <div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between bg-navy-950/85 backdrop-blur-sm border border-slate-700/80 px-2.5 py-1 rounded-lg">
+                <span class="flex items-center gap-1.5 text-[10px] font-bold text-emerald-400">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  Claude Artifact Live Motion
+                </span>
+                <span class="text-[10px] font-mono text-slate-300">9:16 Reels Ready</span>
+              </div>
+            </div>
+
+            <!-- Book Title inside Mockup -->
+            <h2 class="text-xl sm:text-2xl font-black text-white leading-tight mb-1.5">
+              CLAUDE AI <span class="text-brandYellow">ANIMATION</span> BLUEPRINT
+            </h2>
+            <p class="text-xs text-slate-300 mb-4">
+              10-Minute Viral Reels Guide + 10 Copy-Paste Master Prompts
+            </p>
+
+            <!-- Mini Feature Pills -->
+            <div class="grid grid-cols-2 gap-2 text-[11px] font-semibold text-slate-200">
+              <div class="bg-navy-900/90 border border-slate-700/70 rounded-lg px-2.5 py-1.5 flex items-center gap-1.5">
+                <span class="text-brandYellow">✓</span> Zero Editing Skills
+              </div>
+              <div class="bg-navy-900/90 border border-slate-700/70 rounded-lg px-2.5 py-1.5 flex items-center gap-1.5">
+                <span class="text-brandCyan">✓</span> 100% Free AI Tool
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PAIN VS. SOLUTION COMPARISON SECTION -->
+  <section class="py-14 sm:py-20 px-4 sm:px-6 max-w-5xl mx-auto">
+    <div class="text-center mb-10">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-brandCyan">Why Most Beginners Quit</span>
+      <h2 class="text-2xl sm:text-4xl font-black text-white mt-2">
+        Stop Doing It The <span class="text-rose-400">Old Hard Way</span>
+      </h2>
+      <p class="text-sm sm:text-base text-slate-400 mt-2 max-w-xl mx-auto">
+        See why smart creators are switching to the 10-minute Claude AI method instead of wasting money on expensive tools.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Old Hard Way -->
+      <div class="rounded-2xl bg-rose-950/20 border border-rose-500/30 p-6 sm:p-7">
+        <div class="flex items-center gap-2.5 text-rose-400 font-extrabold text-lg mb-5">
+          <span class="w-8 h-8 rounded-full bg-rose-500/20 flex items-center justify-center">✕</span>
+          <span>The Old Hard Way (Struggle)</span>
+        </div>
+        <ul class="space-y-4 text-sm sm:text-base text-slate-300">
+          <li class="flex items-start gap-3">
+            <span class="text-rose-400 font-bold mt-0.5">❌</span>
+            <span>Spending <strong>4–6 hours</strong> per video manually animating keyframes in After Effects or CapCut.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-rose-400 font-bold mt-0.5">❌</span>
+            <span>Paying <strong>₹2,000+/month</strong> for multiple paid AI image &amp; video generators.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-rose-400 font-bold mt-0.5">❌</span>
+            <span>Inconsistent characters and low-quality visuals that get stuck at 200 views.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-rose-400 font-bold mt-0.5">❌</span>
+            <span>Giving up after 1 week due to burnout and complicated workflows.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- The 10-Minute Claude AI Way -->
+      <div class="rounded-2xl bg-gradient-to-b from-navy-800 to-navy-900 border-2 border-brandCyan/60 p-6 sm:p-7 shadow-[0_0_30px_rgba(6,182,212,0.15)] relative">
+        <span class="absolute -top-3 right-5 bg-brandYellow text-navy-950 text-[11px] font-black px-3 py-0.5 rounded-full uppercase">
+          Smart Creator Method
+        </span>
+        <div class="flex items-center gap-2.5 text-brandCyan font-extrabold text-lg mb-5">
+          <span class="w-8 h-8 rounded-full bg-brandCyan/20 flex items-center justify-center">✓</span>
+          <span>The 10-Minute Claude AI Way</span>
+        </div>
+        <ul class="space-y-4 text-sm sm:text-base text-slate-200">
+          <li class="flex items-start gap-3">
+            <span class="text-emerald-400 font-bold mt-0.5">✅</span>
+            <span>Generate smooth, moving 2D/Vector animations in <strong>under 10 minutes</strong>.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-emerald-400 font-bold mt-0.5">✅</span>
+            <span>Works with a <strong>100% Free Claude AI account</strong>—one-time ₹69 guide investment only.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-emerald-400 font-bold mt-0.5">✅</span>
+            <span>Clean, Kurzgesagt-style educational visuals that hook viewers in the first 3 seconds.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-emerald-400 font-bold mt-0.5">✅</span>
+            <span>Simple copy-paste prompts you can use on <strong>mobile or laptop</strong> anytime.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PROMPT PREVIEW DEMO BOX -->
+  <section class="py-12 sm:py-16 px-4 sm:px-6 bg-navy-900/60 border-y border-slate-800/80">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <span class="inline-block bg-brandYellow/15 text-brandYellow border border-brandYellow/30 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
+          👀 SNEAK PEEK INSIDE THE PDF
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-black text-white">
+          See How One Copy-Paste Prompt Creates Live Motion
+        </h2>
+        <p class="text-sm text-slate-400 mt-1.5">
+          Toggle the preview below to see how Claude turns simple text into a 9:16 Reels animation.
+        </p>
+      </div>
+
+      <div class="glass-card rounded-2xl p-5 sm:p-7">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+            <span class="text-xs font-mono text-slate-400 ml-1">Prompt #01 — "What If Earth Stops Spinning?"</span>
+          </div>
+          <button id="toggle-preview-btn" type="button" class="bg-brandCyan hover:bg-cyan-400 text-navy-950 font-extrabold text-xs sm:text-sm px-4 py-2 rounded-xl transition cursor-pointer shadow-md">
+            ✨ Preview How It Works
+          </button>
+        </div>
+
+        <!-- Prompt Text Box -->
+        <div class="bg-navy-950 border border-slate-800 rounded-xl p-4 font-mono text-xs sm:text-sm text-slate-200 leading-relaxed relative overflow-hidden">
+          <p>
+            "Create a smooth looping 9:16 vertical animated SVG/HTML illustration in flat vector style on a dark navy background (#0b132b). Show planet Earth rotating with glowing cyan direction arrows, then suddenly stopping with a shockwave pulse..."
+          </p>
+          <!-- Locked Blur Overlay for remaining prompts -->
+          <div class="mt-3 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 blur-[3px] select-none">+ camera zoom, particle physics &amp; exact color codes...</span>
+            <a href="https://superprofile.bio/vp/6af9647553aa440007f208b6" class="text-brandYellow font-sans font-bold hover:underline shrink-0">
+              🔒 Unlock All 10 Prompts (₹69) →
+            </a>
+          </div>
+        </div>
+
+        <!-- Hidden/Toggleable Output Simulation -->
+        <div id="preview-output-box" class="hidden mt-5 rounded-xl bg-navy-950 border border-brandCyan/40 p-4 sm:p-5 transition-all">
+          <div class="flex flex-col sm:flex-row items-center gap-5">
+            <div class="w-28 h-28 shrink-0 rounded-xl bg-navy-900 border border-slate-700 flex items-center justify-center relative overflow-hidden">
+              <div class="w-16 h-16 rounded-full border-2 border-dashed border-brandYellow animate-orbit"></div>
+              <div class="absolute w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 to-brandCyan shadow-[0_0_15px_#06B6D4]"></div>
+            </div>
+            <div>
+              <span class="text-xs font-extrabold text-emerald-400 uppercase tracking-wider">✓ Instant Claude Artifact Output</span>
+              <h4 class="text-base sm:text-lg font-bold text-white mt-1">Ready to Screen-Record in 10 Seconds!</h4>
+              <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                Claude automatically renders this smooth animation right on your screen. Just hit record, add your Hindi/English voiceover, and post! All <strong>10 category prompts</strong> (Space, Human Body, Tech, 'What If' &amp; Riddles) are ready inside the PDF.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE STACK BREAKDOWN (WHAT'S INSIDE) -->
+  <section class="py-14 sm:py-20 px-4 sm:px-6 max-w-5xl mx-auto">
+    <div class="text-center mb-10">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-brandYellow">Everything You Need In One PDF</span>
+      <h2 class="text-2xl sm:text-4xl font-black text-white mt-2">
+        What's Inside The Blueprint?
+      </h2>
+      <p class="text-sm sm:text-base text-slate-400 mt-2">
+        Zero fluff. Every page is packed with actionable steps you can apply today.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      <!-- Module 1 -->
+      <div class="glass-card rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 shrink-0 rounded-xl bg-brandCyan/15 border border-brandCyan/40 text-brandCyan font-black flex items-center justify-center text-lg">
+            01
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-extrabold text-white">The 10-Minute Claude AI Artifacts Workflow</h3>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1">Step-by-step guide on how to generate, tweak speed/size, and export clean 9:16 animations without writing a single line of code.</p>
+          </div>
+        </div>
+        <div class="sm:text-right shrink-0">
+          <span class="inline-block bg-navy-950 border border-slate-700 text-slate-300 text-xs font-bold px-3 py-1 rounded-lg">
+            Value: <span class="text-brandYellow">₹199</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Module 2 -->
+      <div class="glass-card rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-brandYellow/40">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 shrink-0 rounded-xl bg-brandYellow/15 border border-brandYellow/40 text-brandYellow font-black flex items-center justify-center text-lg">
+            02
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-extrabold text-white">10 Copy-Paste Master Animation Prompts</h3>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1">Tested prompts covering Space, Human Anatomy, 'What If' Science, Daily Tech, and Viral Riddles—ready to paste into Claude.</p>
+          </div>
+        </div>
+        <div class="sm:text-right shrink-0">
+          <span class="inline-block bg-navy-950 border border-slate-700 text-slate-300 text-xs font-bold px-3 py-1 rounded-lg">
+            Value: <span class="text-brandYellow">₹299</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Module 3 -->
+      <div class="glass-card rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 shrink-0 rounded-xl bg-brandCyan/15 border border-brandCyan/40 text-brandCyan font-black flex items-center justify-center text-lg">
+            03
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-extrabold text-white">Viral 3-Second Hook &amp; Script Generator Formula</h3>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1">1-click script prompt that forces viewers to stop scrolling and watch till the final second (boosting watch time above 110%).</p>
+          </div>
+        </div>
+        <div class="sm:text-right shrink-0">
+          <span class="inline-block bg-navy-950 border border-slate-700 text-slate-300 text-xs font-bold px-3 py-1 rounded-lg">
+            Value: <span class="text-brandYellow">₹149</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Module 4 -->
+      <div class="glass-card rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 shrink-0 rounded-xl bg-brandCyan/15 border border-brandCyan/40 text-brandCyan font-black flex items-center justify-center text-lg">
+            04
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-extrabold text-white">Mobile/PC Recording + SFX &amp; Hashtag Secrets</h3>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1">Exact audio levels, sound effect placement, safe-zone caption rules, and daily hashtag sets for maximum reach.</p>
+          </div>
+        </div>
+        <div class="sm:text-right shrink-0">
+          <span class="inline-block bg-navy-950 border border-slate-700 text-slate-300 text-xs font-bold px-3 py-1 rounded-lg">
+            Value: <span class="text-brandYellow">₹149</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Total Value Offer Card -->
+    <div class="mt-8 rounded-3xl bg-gradient-to-r from-navy-800 via-navy-900 to-navy-800 border-2 border-brandYellow p-6 sm:p-9 text-center shadow-[0_0_40px_rgba(250,204,21,0.18)]">
+      <p class="text-sm sm:text-base font-bold text-slate-300 uppercase tracking-wider">
+        Total Combined Value: <span class="line-through text-rose-400">₹796</span>
+      </p>
+      <div class="my-2 flex items-center justify-center gap-3">
+        <span class="text-4xl sm:text-6xl font-black text-brandYellow">₹69</span>
+        <div class="text-left">
+          <span class="block text-xs font-extrabold uppercase bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-full">One-Time Payment</span>
+          <span class="block text-xs text-slate-400 mt-0.5">No monthly subscriptions</span>
+        </div>
+      </div>
+      <p class="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto mb-6">
+        Less than the cost of a cup of coffee &amp; snack — yet it gives you a complete repeatable system to grow a faceless channel.
+      </p>
+      <a href="https://superprofile.bio/vp/6af9647553aa440007f208b6" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-brandYellow to-amber-400 hover:from-amber-300 hover:to-brandYellow text-navy-950 font-black text-base sm:text-xl px-9 py-4 rounded-2xl shadow-xl animate-pulse-glow transition transform hover:-translate-y-0.5">
+        <span>Get Instant Access Now — ₹69 🚀</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF / CREATOR RESULTS -->
+  <section class="py-12 sm:py-16 px-4 sm:px-6 bg-navy-900/50 border-y border-slate-800/80">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-10">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-brandCyan">Real Creator Feedback</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-white mt-2">
+          Creators Are Already Launching With This Blueprint
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Review 1 -->
+        <div class="glass-card rounded-2xl p-6">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-brandCyan/20 border border-brandCyan text-brandCyan font-bold flex items-center justify-center">RS</div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Rohan S.</h4>
+                <span class="text-[11px] text-slate-400">Faceless Science Page</span>
+              </div>
+            </div>
+            <span class="text-brandYellow text-xs">★★★★★</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            "I used to spend 3 hours searching for stock videos. With Prompt #01 and #05 from this PDF, I made my first space reel on Claude in literally 12 minutes and it crossed 18K views!"
+          </p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="glass-card rounded-2xl p-6">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-brandYellow/20 border border-brandYellow text-brandYellow font-bold flex items-center justify-center">PM</div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Priya M.</h4>
+                <span class="text-[11px] text-slate-400">Student &amp; Part-Time Creator</span>
+              </div>
+            </div>
+            <span class="text-brandYellow text-xs">★★★★★</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            "Best ₹69 spent! I don't even own a laptop—I used Claude on my phone browser, screen recorded the animation, and added voiceover in VN app. Super easy to follow."
+          </p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="glass-card rounded-2xl p-6">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-400 text-emerald-300 font-bold flex items-center justify-center">AK</div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Amit K.</h4>
+                <span class="text-[11px] text-slate-400">YouTube Shorts Creator</span>
+              </div>
+            </div>
+            <span class="text-brandYellow text-xs">★★★★★</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            "No unnecessary theory—straight to the exact prompts and editing SFX tips. The 3-second hook formula alone doubled my average retention rate."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE ACCORDION FAQ SECTION -->
+  <section class="py-14 sm:py-20 px-4 sm:px-6 max-w-3xl mx-auto">
+    <div class="text-center mb-9">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-brandCyan">Got Questions?</span>
+      <h2 class="text-2xl sm:text-3xl font-black text-white mt-2">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="space-y-3" id="faq-container">
+      <!-- FAQ 1 -->
+      <div class="glass-card rounded-2xl overflow-hidden">
+        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-white cursor-pointer">
+          <span>1. Do I need a laptop or paid Claude Pro subscription?</span>
+          <span class="faq-icon text-brandYellow text-xl font-black transition-transform">+</span>
+        </button>
+        <div class="faq-answer hidden px-5 pb-4 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/70 pt-3">
+          No! You can follow this entire workflow using your smartphone (in desktop view or Claude app) and a <strong>100% free Claude.ai account</strong>. No paid AI subscriptions are required.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="glass-card rounded-2xl overflow-hidden">
+        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-white cursor-pointer">
+          <span>2. How will I receive the PDF after paying ₹69?</span>
+          <span class="faq-icon text-brandYellow text-xl font-black transition-transform">+</span>
+        </button>
+        <div class="faq-answer hidden px-5 pb-4 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/70 pt-3">
+          Immediately after completing your ₹69 payment on SuperProfile, you will be redirected to an instant download button on your screen, and a copy of the PDF will also be sent directly to your email.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="glass-card rounded-2xl overflow-hidden">
+        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-white cursor-pointer">
+          <span>3. What language is the guide written in?</span>
+          <span class="faq-icon text-brandYellow text-xl font-black transition-transform">+</span>
+        </button>
+        <div class="faq-answer hidden px-5 pb-4 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/70 pt-3">
+          The guide is written in super simple, easy-to-understand English so any beginner can follow the steps effortlessly—and you can generate scripts in Hindi, English, or any language you want!
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="glass-card rounded-2xl overflow-hidden">
+        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-white cursor-pointer">
+          <span>4. I have zero coding or animation experience. Can I do this?</span>
+          <span class="faq-icon text-brandYellow text-xl font-black transition-transform">+</span>
+        </button>
+        <div class="faq-answer hidden px-5 pb-4 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/70 pt-3">
+          Yes, 100%! You don't need to know any coding or animation software. You simply copy the ready-made prompts from the PDF, paste them into Claude AI, and Claude builds the animation automatically.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 py-10 px-4 sm:px-6 text-center text-xs text-slate-400">
+    <div class="max-w-4xl mx-auto space-y-3">
+      <p class="font-bold text-white text-sm">What's Know Official (@whatsknowofficial)</p>
+      <p>
+        Need support? Reach out via Instagram DM at <span class="text-brandCyan font-semibold">@whatsknowofficial</span>.
+      </p>
+      <p class="text-[11px] text-slate-500 max-w-2xl mx-auto">
+        Disclaimer: This educational guide is created independently by What's Know Official to help content creators streamline their workflow. Results depend on your consistency and content execution.
+      </p>
+      <p class="pt-2 text-slate-500">© 2026 What's Know Official. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- STICKY BOTTOM CONVERSION BAR (MOBILE & DESKTOP) -->
+  <div class="fixed bottom-0 inset-x-0 z-50 bg-navy-900/95 backdrop-blur-lg border-t border-brandCyan/40 px-4 py-3 shadow-[0_-10px_30px_rgba(0,0,0,0.65)]">
+    <div class="max-w-5xl mx-auto flex items-center justify-between gap-3">
+      <div class="min-w-0">
+        <p class="text-xs sm:text-sm font-extrabold text-white truncate">
+          Claude AI Animation Blueprint (PDF)
+        </p>
+        <div class="flex items-center gap-2 mt-0.5">
+          <span class="text-xs text-slate-400 line-through">₹299</span>
+          <span class="text-base sm:text-lg font-black text-brandYellow">₹69</span>
+          <span class="text-[10px] font-bold bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full">Instant PDF</span>
+        </div>
+      </div>
+      <a href="https://superprofile.bio/vp/6af9647553aa440007f208b6" class="shrink-0 inline-flex items-center gap-1.5 bg-gradient-to-r from-brandYellow to-amber-400 hover:from-amber-300 hover:to-brandYellow text-navy-950 font-black text-xs sm:text-base px-4 sm:px-6 py-3 rounded-xl shadow-lg transition transform active:scale-95">
+        <span>Get Instant Access ⚡</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE JAVASCRIPT (COUNTDOWN, PREVIEW TOGGLE & FAQ ACCORDION) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Live 14:59 Countdown Timer (resets smoothly so urgency stays active)
+      let totalSeconds = 14 * 60 + 59;
+      const timerEl = document.getElementById('countdown-timer');
+      if (timerEl) {
+        setInterval(() => {
+          if (totalSeconds <= 0) {
+            totalSeconds = 14 * 60 + 59;
+          } else {
+            totalSeconds--;
+          }
+          const mins = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+          const secs = String(totalSeconds % 60).padStart(2, '0');
+          timerEl.textContent = `${mins}:${secs}`;
+        }, 1000);
+      }
+
+      // 2. Interactive Prompt Output Preview Toggle
+      const previewBtn = document.getElementById('toggle-preview-btn');
+      const outputBox = document.getElementById('preview-output-box');
+      if (previewBtn && outputBox) {
+        previewBtn.addEventListener('click', () => {
+          const isHidden = outputBox.classList.contains('hidden');
+          if (isHidden) {
+            outputBox.classList.remove('hidden');
+            previewBtn.textContent = '✕ Hide Preview';
+          } else {
+            outputBox.classList.add('hidden');
+            previewBtn.textContent = '✨ Preview How It Works';
+          }
+        });
+      }
+
+      // 3. FAQ Accordion Logic
+      const faqButtons = document.querySelectorAll('.faq-btn');
+      faqButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const answer = btn.nextElementSibling;
+          const icon = btn.querySelector('.faq-icon');
+          const isOpen = !answer.classList.contains('hidden');
+
+          // Close all other FAQs
+          document.querySelectorAll('.faq-answer').forEach((el) => el.classList.add('hidden'));
+          document.querySelectorAll('.faq-icon').forEach((ic) => {
+            ic.textContent = '+';
+            ic.classList.remove('rotate-45');
+          });
+
+          if (!isOpen) {
+            answer.classList.remove('hidden');
+            icon.textContent = '+';
+            icon.classList.add('rotate-45');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
